@@ -1,0 +1,12 @@
+{
+    "name": "nexus-admin-dashboard-worker",
+    "main": "src/worker.js",
+    "compatibility_date": "2025-08-19",
+    "assets": {
+      "directory": "./dist"
+    }
+  }
+  
+  
+  
+  
