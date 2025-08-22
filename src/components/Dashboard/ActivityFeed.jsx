@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Clock, User, ShoppingCart, CreditCard, Settings, Bell } from 'lucide-react';
 
@@ -58,42 +57,42 @@ const activities = [
 function ActivityFeed() {
   return (
     <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-lg shadow-slate-200/20">
-      <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50">
+      <div className="p-4 sm:p-6 border-b border-slate-200/50 dark:border-slate-700/50">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+            <h3 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white">
               Activity Feed
             </h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Recent System Activities
             </p>
           </div>
-          <button className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors">
+          <button className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium transition-colors">
             View All
           </button>
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         <div className="space-y-4">
           {activities.map((activity) => {
             const ActivityIcon = activity.icon;
             return (
               <div
                 key={activity.id}
-                className="flex items-start space-x-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                className="flex items-start space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
               >
                 <div className={`p-2 rounded-lg ${activity.bgColor}`}>
-                  <ActivityIcon className={`w-5 h-5 ${activity.color}`} />
+                  <ActivityIcon className={`w-4 sm:w-5 h-4 sm:h-5 ${activity.color}`} />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold text-slate-800 dark:text-white">
                     {activity.title}
                   </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 truncate">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 truncate">
                     {activity.description}
                   </p>
-                  <div className="flex items-center-safe space-x-1 mt-1">
-                    <Clock className="w-4 h-4 text-slate-400" />
+                  <div className="flex items-center space-x-1 mt-1">
+                    <Clock className="w-3 sm:w-4 h-3 sm:h-4 text-slate-400" />
                     <span className="text-xs text-slate-500 dark:text-slate-400">
                       {activity.time}
                     </span>

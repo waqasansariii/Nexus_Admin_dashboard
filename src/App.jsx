@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Header from './components/Layout/Header';
 import Sidebar from './components/Layout/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -12,19 +12,16 @@ function App() {
       <div className="flex h-screen overflow-hidden">
         <Sidebar
           collapsed={sideBarCollapsed}
-          onToggle={() => setSideBarCollapsed(!sideBarCollapsed)}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
         <div className="flex-1 flex flex-col overflow-hidden">
           <Header
-            sidebarCollapsed={sideBarCollapsed}
+            sideBarCollapsed={sideBarCollapsed}
             onToggleSidebar={() => setSideBarCollapsed(!sideBarCollapsed)}
-            
-            
           />
           <main className="flex-1 overflow-y-auto bg-transparent">
-            <div className="p-6 space-y-6">
+            <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
               {currentPage === 'dashboard' && <Dashboard />}
             </div>
           </main>
@@ -35,4 +32,3 @@ function App() {
 }
 
 export default App;
-

@@ -55,13 +55,13 @@ const recentOrders = [
 const topProducts = [
   {
     name: 'MacBook Pro 16',
-    sales: 124.7,
+    sales: 1247,
     revenue: '$2,987,530',
     trend: 'up',
     change: '+12%',
   },
   {
-    name: 'Iphone 15 Pro',
+    name: 'iPhone 15 Pro',
     sales: 2156,
     revenue: '$2,587,844',
     trend: 'up',
@@ -98,35 +98,35 @@ export default function TableSection() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Recent Orders */}
       <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-lg shadow-slate-200/20 overflow-hidden">
-        <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-4 sm:p-6 border-b border-slate-200/50 dark:border-slate-700/50">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+              <h3 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white">
                 Recent Orders
               </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 Latest customer orders
               </p>
             </div>
-            <button className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors">
+            <button className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium transition-colors">
               View All
             </button>
           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full min-w-[600px]">
             <thead>
               <tr>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Order ID</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Customer</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Product</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Amount</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Status</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400">Date</th>
-                <th className="text-left p-4 text-sm font-semibold text-slate-600 dark:text-slate-400"></th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Order ID</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Customer</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Product</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Amount</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Status</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">Date</th>
+                <th className="text-left p-3 sm:p-4 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400"></th>
               </tr>
             </thead>
             <tbody>
@@ -135,41 +135,41 @@ export default function TableSection() {
                   key={order.id}
                   className="border-b border-slate-200/50 dark:border-slate-700/50 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors"
                 >
-                  <td className="p-4">
-                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                  <td className="p-3 sm:p-4">
+                    <span className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-400">
                       {order.id}
                     </span>
                   </td>
-                  <td className="p-4">
-                    <span className="text-sm text-slate-800 dark:text-white">
+                  <td className="p-3 sm:p-4">
+                    <span className="text-xs sm:text-sm text-slate-800 dark:text-white">
                       {order.customer}
                     </span>
                   </td>
-                  <td className="p-4">
-                    <span className="text-sm text-slate-800 dark:text-white">
+                  <td className="p-3 sm:p-4">
+                    <span className="text-xs sm:text-sm text-slate-800 dark:text-white">
                       {order.product}
                     </span>
                   </td>
-                  <td className="p-4">
-                    <span className="text-sm text-slate-800 dark:text-white">
+                  <td className="p-3 sm:p-4">
+                    <span className="text-xs sm:text-sm text-slate-800 dark:text-white">
                       {order.amount}
                     </span>
                   </td>
-                  <td className="p-4">
+                  <td className="p-3 sm:p-4">
                     <span
-                      className={`text-xs font-medium px-3 py-1 rounded-full ${getStatusColor(order.status)}`}
+                      className={`text-xs font-medium px-2 sm:px-3 py-1 rounded-full ${getStatusColor(order.status)}`}
                     >
                       {order.status}
                     </span>
                   </td>
-                  <td className="p-4">
-                    <span className="text-sm text-slate-800 dark:text-white">
+                  <td className="p-3 sm:p-4">
+                    <span className="text-xs sm:text-sm text-slate-800 dark:text-white">
                       {order.date}
                     </span>
                   </td>
-                  <td className="p-4">
+                  <td className="p-3 sm:p-4">
                     <button className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                      <MoreHorizontal className="w-4 h-4" />
+                      <MoreHorizontal className="w-4 sm:w-5 h-4 sm:h-5" />
                     </button>
                   </td>
                 </tr>
@@ -180,29 +180,29 @@ export default function TableSection() {
       </div>
       {/* Top Products */}
       <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-lg shadow-slate-200/20 overflow-hidden">
-        <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-4 sm:p-6 border-b border-slate-200/50 dark:border-slate-700/50">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+              <h3 className="text-base sm:text-lg font-bold text-slate-800 dark:text-white">
                 Top Products
               </h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 Best performing products
               </p>
             </div>
-            <button className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors">
+            <button className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium transition-colors">
               View All
             </button>
           </div>
         </div>
-        <div className="p-6 space-y-4">
+        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
           {topProducts.map((product) => (
             <div
               key={product.name}
-              className="flex items-center justify-between rounded-xl p-3 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors"
+              className="flex items-center justify-between rounded-xl p-2 sm:p-3 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors"
             >
               <div className="flex-1">
-                <h4 className="text-sm font-semibold text-slate-800 dark:text-white">
+                <h4 className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-white">
                   {product.name}
                 </h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -210,14 +210,14 @@ export default function TableSection() {
                 </p>
               </div>
               <div className="text-right">
-                <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-white">
                   {product.revenue}
                 </p>
                 <div className="flex items-center justify-end space-x-1">
                   {product.trend === 'up' ? (
-                    <TrendingUp className="w-5 h-5 text-emerald-500" />
+                    <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-500" />
                   ) : (
-                    <TrendingDown className="w-5 h-5 text-red-500" />
+                    <TrendingDown className="w-4 sm:w-5 h-4 sm:h-5 text-red-500" />
                   )}
                   <span
                     className={`text-xs font-medium ${

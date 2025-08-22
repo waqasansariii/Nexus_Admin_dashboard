@@ -26,34 +26,34 @@ export default function RevenueChart() {
   ];
 
   return (
-    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-lg shadow-slate-200/20 p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-slate-700/50 shadow-lg shadow-slate-200/20 p-4 sm:p-6">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
         <div>
-          <h3 className="text-xl font-bold text-slate-800 dark:text-white">
+          <h3 className="text-base sm:text-xl font-bold text-slate-800 dark:text-white">
             Revenue Chart
           </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
             Monthly revenue and expenses
           </p>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               <span>Revenue</span>
             </div>
           </div>
-          <div className="flex items-center space-x-3">
-            <div className="w-3 h-3 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full"></div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="w-2 sm:w-3 h-2 sm:h-3 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full"></div>
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               <span>Expenses</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="h-80">
+      <div className="h-64 sm:h-80">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <BarChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 5 }}>
             <defs>
               <linearGradient id="colorRevenue" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#3b82f6" />
@@ -65,10 +65,10 @@ export default function RevenueChart() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.3} />
-            <XAxis dataKey="month" stroke="#64748b" fontSize={12} />
+            <XAxis dataKey="month" stroke="#64748b" fontSize={10} interval={0} />
             <YAxis
               stroke="#64748b"
-              fontSize={12}
+              fontSize={10}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `$${value / 1000}k`}
@@ -79,6 +79,7 @@ export default function RevenueChart() {
                 border: 'none',
                 borderRadius: '12px',
                 boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                fontSize: '12px',
               }}
               formatter={(value) => [`$${value.toLocaleString()}`, '']}
             />
